@@ -7,3 +7,13 @@
 //
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
+axios.get("https://lambda-times-backend.herokuapp.com/topics")
+  .then(response => {
+    // const whole = document.querySelector('.cards');
+    // const info = response.data;
+    // const cardInfo = newCard(info);
+    // whole.append(cardInfo);
+  })
+  .catch(err => {
+    console.log('This is an error');
+  });
