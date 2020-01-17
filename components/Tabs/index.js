@@ -20,10 +20,11 @@ axios.get("https://lambda-times-backend.herokuapp.com/topics")
     console.log('This is an error');
   });
 
-function createTab (tabObj) {
+function createTab (Obj) {
+
     const tab = document.createElement('div')
     tab.classList.add('tab')
-    tab.textContent = tabObj;
+    tab.textContent = Obj;
 
     return tab
 }
