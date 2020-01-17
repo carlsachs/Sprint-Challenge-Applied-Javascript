@@ -23,7 +23,9 @@ function Header() {
     header.append(h1)
     header.append(temp)
 
-    
+    header.classList.add('header')
+    date.classList.add('date')
+    temp.classList.add('temp')
 
 
 }
