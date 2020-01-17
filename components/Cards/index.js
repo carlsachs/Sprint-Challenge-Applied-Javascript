@@ -18,42 +18,42 @@
 //
 // Create a card for each of the articles and add the card to the DOM.
 axios.get(`https://lambda-times-backend.herokuapp.com/articles`)
-     .then(response => {
-         console.log(response);
-         Object.values(response.data.articles).forEach(item => {
-             item.forEach(item => {
-                 let cards = document.querySelector('.cards-container');
-                 cards.append(newArticle(item));
-             })
-         })
-        }) 
-        .catch(error => {
-            console.log(error);
+    .then(response => {
+        console.log(response);
+        Object.values(response.data.articles).forEach(item => {
+            item.forEach(item => {
+                let cards = document.querySelector('.cards-container');
+                cards.append(newArticle(item));
+            })
         })
+    }) 
+    .catch(error => {
+        console.log(error);
+    })
 
 function newArticle (article){
 
-const card = document.createElement('div');
-const headline = document.createElement('div');
-const author = document.createElement('div');
-const imgBox = document.createElement('div');
-const img = document.createElement('img');
-const span = document.createElement('span');
+    const card = document.createElement('div');
+    const headline = document.createElement('div');
+    const author = document.createElement('div');
+    const imgBox = document.createElement('div');
+    const img = document.createElement('img');
+    const span = document.createElement('span');
 
-card.classList.add('card')
-headline.classList.add('headline')
-author.classList.add('author')
-imgBox.classList.add('img-container')
+    card.classList.add('card');
+    headline.classList.add('headline');
+    author.classList.add('author');
+    imgBox.classList.add('img-container');
 
-card.append(headline)
-card.append(author)
-card.append(span)
-author.append(imgBox)
-imgBox.append(img)
+    card.append(headline);
+    card.append(author);
+    card.append(span);
+    author.append(imgBox);
+    imgBox.append(img);
 
-headline.textContent = article.headline;
-img.src = article.authorPhoto;
-span.textContent = `Author: ${article.authorName}`
+    headline.textContent = article.headline;
+    img.src = article.authorPhoto;
+    span.textContent = `Author: ${article.authorName}`
 
-return card
+    return card
 }
